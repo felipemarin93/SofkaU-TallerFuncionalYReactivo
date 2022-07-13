@@ -2,56 +2,28 @@ package co.com.sofka;
 
 import reactor.core.publisher.Flux;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class ExerciseChat {
 
     public static void main(String[] args) {
-        System.out.println("Bienvenid@ al Chat sensurado , ingresa una cadena de texto, el cual filtrará las groserías y las reemplaza por **** ");
+        System.out.println("Bienvenid@ al Chat sensurado");
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("chat ...... ");
-        String cadena = scanner.nextLine().toLowerCase();
-        String[] arreglo = cadena.split(" ");
-        List<String> chat = Arrays.asList(arreglo);
-        Flux<String> nuevoChat = Flux.fromIterable(chat).map(p -> comparar(p));
-        nuevoChat.subscribe(x -> System.out.print(" " + x + " "));
-    }
-    private static String comparar(String palabra) {
-        String retorno = "****";
+        List<String> badWords = List.of("hp", "marica", "pendejo", "perra", "mierda", "malparido", "gonorrea", "estupido", "soplamonda","estupido","hijueputa","verga","malparida","caremonda");
+        Scanner sc = new Scanner(System.in);
 
-        List<String> groserias = new ArrayList<>();
-        groserias.add("guevon");
-        groserias.add("marica");
-        groserias.add("puta");
-        groserias.add("imbecil");
-        groserias.add("culo");
-        groserias.add("puta");
-        groserias.add("estupido");
-        groserias.add("gonorrea");
-        groserias.add("catrechimba");
-        groserias.add("recontragonorrea");
-        groserias.add("hijueputa");
-        groserias.add("malparido");
-        groserias.add("perra");
-        groserias.add("careverga");
-        groserias.add("hijo de verga");
-        groserias.add("carechimba");
-        groserias.add("mierda");
-        groserias.add("pirobo");
-        groserias.add("mama");
-        groserias.add("suya");
+        System.out.println("Introduza un texto el cual filtrará las groserías");;
+        String wordsList = sc.nextLine();
+        var newWordList = Arrays.stream(wordsList.split(" ")).toList();
 
-        Stream<String> respuesta = groserias.stream().filter(x -> x.equals(palabra));
-
-        String response = respuesta.collect(Collectors.joining());
-
-        if(response.equals(palabra)){
-
-            return retorno;
-        }
-        return palabra;
+        Flux.fromIterable(newWordList).map(a -> {
+            if (badWords.contains(a)) {
+                a = "****";
+            }
+            return a;
+        }).subscribe(a-> System.out.print(a+" "));
     }
 }
