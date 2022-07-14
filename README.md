@@ -26,4 +26,5 @@ Crear dos funciones, una para resolver derivadas y otra integrales, pero esta se
 autor: Daniel Felipe Marín Giraldo
 email: felipemaringiraldo@hotmail.com
 
-![image](https://user-images.githubusercontent.com/51167724/178897492-27c5caab-0fd3-4540-991d-f2beffe429fc.png)
+![image](https://user-images.githubusercontent.com/51167724/178897637-1faf0408-ce3a-4652-bcee-586cc9520c00.png)
+
