@@ -1,5 +1,14 @@
 package co.com.sofka;
 
+
+/**
+ * * @Autor Daniel Felipe Marin Giraldo
+ *  * v 0.1
+ *  Ejercicio 2. Crear un chat, un input donde lo que se ingrese sea almacenado en una lista, para posteriormente cambiar en la lista las malas palabras, para sos y compararlas con la lista
+ * del chat y si se encuentra una reemplazarla por: **** , esto respetando los principios de la programación reactiva.
+ *
+ */
+
 import reactor.core.publisher.Flux;
 
 import java.util.Arrays;
@@ -19,11 +28,11 @@ public class ExerciseChat {
         String wordsList = sc.nextLine();
         var newWordList = Arrays.stream(wordsList.split(" ")).toList();
 
-        Flux.fromIterable(newWordList).map(message -> {
-            if (badWords.contains(message.toLowerCase())) {
-                message = "****";
+        Flux.fromIterable(newWordList).map(a -> {
+            if (badWords.contains(a.toLowerCase())) {
+                a = "****";
             }
-            return message;
+            return a;
         }).subscribe(a-> System.out.print(a+" "));
     }
 }

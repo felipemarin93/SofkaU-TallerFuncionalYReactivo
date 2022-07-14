@@ -1,11 +1,10 @@
 /**
+ * @Autor Daniel Felipe Marin Giraldo
+ * v 0.1
  * Programación reactiva y funcional
  *
  *
- * Ejercicio 1 - valor 65%
- *
- * Si se realiza bien por completo este ejercicio obtienes el 65% de la nota.
- *
+ * Ejercicio 1
  *
  * Crear una lista de mínimo 30 correos, de los cuales se le deben aplicar los siguientes operadores:
  *
