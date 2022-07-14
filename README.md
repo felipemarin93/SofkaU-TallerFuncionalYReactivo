@@ -23,8 +23,9 @@ Ejercicio 3
 Crear dos funciones, una para resolver derivadas y otra integrales, pero esta se deben usar si quiero hacer la contraria, es decir, si quiero hacer una derivada inversa o una integral inversa.
 
 
-autor: Daniel Felipe Marín Giraldo
-email: felipemaringiraldo@hotmail.com
+
 
 ![image](https://user-images.githubusercontent.com/51167724/178897637-1faf0408-ce3a-4652-bcee-586cc9520c00.png)
 
+autor: Daniel Felipe Marín Giraldo
+email: felipemaringiraldo@hotmail.com
