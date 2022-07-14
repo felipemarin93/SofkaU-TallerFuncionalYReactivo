@@ -19,11 +19,11 @@ public class ExerciseChat {
         String wordsList = sc.nextLine();
         var newWordList = Arrays.stream(wordsList.split(" ")).toList();
 
-        Flux.fromIterable(newWordList).map(a -> {
-            if (badWords.contains(a)) {
-                a = "****";
+        Flux.fromIterable(newWordList).map(message -> {
+            if (badWords.contains(message.toLowerCase())) {
+                message = "****";
             }
-            return a;
+            return message;
         }).subscribe(a-> System.out.print(a+" "));
     }
 }
